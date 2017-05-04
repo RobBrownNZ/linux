@@ -464,7 +464,7 @@ static int mga_do_agp_dma_bootstrap(struct drm_device *dev,
 	struct drm_buf_desc req;
 	struct drm_agp_mode mode;
 	struct drm_agp_info info;
-	struct drm_agp_buffer agp_req;
+// 	struct drm_agp_buffer agp_req;
 	struct drm_agp_binding bind_req;
 
 	/* Acquire AGP. */

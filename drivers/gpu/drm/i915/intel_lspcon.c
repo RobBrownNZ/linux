@@ -163,7 +163,8 @@ static void lspcon_resume_in_pcon_wa(struct intel_lspcon *lspcon)
 	unsigned long start = jiffies;
 
 	while (1) {
-		if (intel_digital_port_connected(dev_priv, dig_port)) {
+		if (intel_digital_port_connected(dev_priv, dig_port) &&
+		    !memcmp(&intel_dp->desc, &desc, sizeof(desc))) {
 			DRM_DEBUG_KMS("LSPCON recovering in PCON mode after %u ms\n",
 				      jiffies_to_msecs(jiffies - start));
 			return;
